@@ -1,0 +1,578 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to right, rgb(183, 61, 61), rgb(205, 104, 205));
+}
+
+.diceGame{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: rgb(92, 76, 92);
+  width: 50%;
+  margin: auto;
+  margin-top: 2rem;
+
+}
+ .gameActive{
+  background-color: rgb(222, 181, 181);
+} 
+
+
+.game1{
+  width: 20rem;
+  text-align: center;
+  line-height: 1.5rem;
+  padding:2rem;
+}
+
+.game2{
+  width: 20rem;
+  text-align: center;
+  line-height: 1.5rem;
+  padding: 2rem;
+}
+
+.showRolledDice{
+border: 1px solid rgb(209, 110, 110);
+width: 5rem;
+margin: auto;
+padding: 0.5rem;
+background-color: rgb(209, 110, 110);
+color: whitesmoke;
+border-radius: 20px;
+font-weight: bolder;
+
+}
+
+.showRolledDice span{
+  font-size:1.5rem ;
+}
+
+.displayWinner0{
+position:absolute;
+bottom: 2rem;
+left: 6rem;
+border: 1px solid rgb(209, 110, 110);
+width: 5rem;
+padding: 0.5rem;
+background-color: rgb(209, 110, 110);
+color: whitesmoke;
+border-radius: 20px;
+font-weight: bolder;
+}
+
+.displayWinner1 {
+position:absolute;
+bottom: 2rem;
+right: 6rem;
+border: 1px solid rgb(209, 110, 110);
+width: 5rem;
+padding: 0.5rem;
+background-color: rgb(209, 110, 110);
+color: whitesmoke;
+border-radius: 20px;
+font-weight: bolder;
+}
+
+.hideWinner{
+  display: none;
+}
+.holdScore{
+  font-size: 2rem;
+}
+
+.allDices{
+  margin: 1rem;
+  position: relative;
+  }
+
+.dice{
+  display: block;
+  position: absolute;
+  border: 1px solid white;
+  background-color:white ;
+  width: 5rem;
+  padding: 0.2rem;
+  margin-top: 2rem;
+  border-radius: 60px;
+  text-align: center;
+  text-transform:uppercase;
+  font-size: 0.7rem;
+}
+
+.dice:nth-child(1){
+  top: 1rem;
+  left: 31.5rem;
+}
+
+.dice:nth-child(2){
+  top: 10rem;
+  left: 31.5rem;
+}
+
+.dice:nth-child(3){
+  top: 12rem;
+  left: 31.5rem; /* 14.5rem */
+}
+
+.displaydices{
+  position: absolute;
+  top: 6.5rem;
+  left: 32.3rem; /* 15.5rem */
+  width: 3rem;
+  height: 3rem;
+}
+
+.hidden{
+  display:none;
+}
+
+.playerWinner{
+  background-color: chocolate;
+}
+
+/* .theDice1{
+   position: relative; 
+  border: 1px solid whitesmoke;
+  width: 3rem;
+  height: 3rem;
+  background-color: whitesmoke;
+} */
+
+/*   .num1a{
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  top: 1rem;
+  left:1.3rem
+  
+}
+
+.num2a{
+  display: block;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.1rem;
+}
+.num2b{
+  display: block;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.1rem;
+}
+
+.num3a{
+  display: block;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.1rem;
+}
+.num3b{
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  top: 1.2rem;
+  left:1.3rem
+  
+}
+.num3c{
+  display: block;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.1rem;
+} 
+
+.num4a{
+    display: block;
+    margin: 0.2rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: whitesmoke;
+    border-radius: 40px;
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+}
+
+.num4b{
+  display: block;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.1rem;
+}
+.num4c{
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  bottom: 0.3rem;
+  left:0.3rem
+}
+.num4d{
+  display: block;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.1rem;
+} 
+
+.num5a{
+  display: block;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+}
+
+.num5b{
+display: block;
+margin: 0.2rem;
+width: 0.5rem;
+height: 0.5rem;
+background-color: whitesmoke;
+border-radius: 40px;
+position: absolute;
+top: 0.1rem;
+left: 0.1rem;
+}
+.num5c{
+display: block;
+width: 0.5rem;
+height: 0.5rem;
+background-color: whitesmoke;
+border-radius: 40px;
+position: absolute;
+bottom: 0.3rem;
+left:0.3rem
+}
+.num5d{
+display: block;
+margin: 0.2rem;
+width: 0.5rem;
+height: 0.5rem;
+background-color: whitesmoke;
+border-radius: 40px;
+position: absolute;
+bottom: 0.1rem;
+right: 0.1rem;
+}
+.num5e{
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  top: 1.2rem;
+  left:1.3rem
+}
+
+.num6a{
+  display: block;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+}
+
+.num6b{
+display: block;
+margin: 0.2rem;
+width: 0.5rem;
+height: 0.5rem;
+background-color: whitesmoke;
+border-radius: 40px;
+position: absolute;
+top: 0.1rem;
+left: 0.1rem;
+}
+.num6c{
+display: block;
+width: 0.5rem;
+height: 0.5rem;
+background-color: whitesmoke;
+border-radius: 40px;
+position: absolute;
+bottom: 0.3rem;
+left:0.3rem
+}
+.num6d{
+display: block;
+margin: 0.2rem;
+width: 0.5rem;
+height: 0.5rem;
+background-color: whitesmoke;
+border-radius: 40px;
+position: absolute;
+bottom: 0.1rem;
+right: 0.1rem;
+}
+.num6e{
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  top: 1.2rem;
+  left:0.3rem
+}
+.num6f{
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  position: absolute;
+  top: 1.2rem;
+  right:0.3rem
+} */
+
+/* .num1a{
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: rgb(219, 26, 26);
+  border-radius: 40px;
+  position: absolute;
+  top: 1.2rem;
+  left:1.2rem
+  
+}
+ 
+.theDice2 {
+  display: flex;
+  position: relative;
+  border: 1px solid whitesmoke;
+  width: 3rem;
+  height: 3rem;
+  background-color: whitesmoke;
+
+}
+.theDice2 span{
+  flex-direction: column;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: rgb(219, 26, 26);
+  border-radius: 40px;
+  
+}
+
+.num2a{
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.1rem;
+}
+
+.theDice3 {
+  display: flex;
+  position: relative;
+  border: 1px solid whitesmoke;
+  width: 3rem;
+  height: 3rem;
+  background-color: whitesmoke;
+
+}
+.theDice3 span{
+  flex-direction: column;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: rgb(219, 26, 26);
+  border-radius: 40px; 
+}
+
+.num3a{
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.1rem;
+}
+
+.num3b{
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+}
+
+.theDice4 {
+  display: flex;
+  position: relative;
+  border: 1px solid whitesmoke;
+  width: 3rem;
+  height: 3rem;
+  background-color: whitesmoke;
+
+}
+.theDice4 span{
+  flex-direction: column;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: rgb(219, 26, 26);
+  border-radius: 40px; 
+}
+
+.num4a{
+  position: absolute;
+  right: 0.1rem;
+}
+
+.num4b{
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.1rem;
+}
+
+.num4c{
+  position: absolute;
+  bottom: 0.1rem;
+}
+
+.theDice5 {
+  display: flex;
+  position: relative;
+  border: 1px solid whitesmoke;
+  width: 3rem;
+  height: 3rem;
+  background-color: whitesmoke;
+
+}
+.theDice5 span{
+  flex-direction: column;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: rgb(219, 26, 26);
+  border-radius: 40px; 
+}
+
+.num5a{
+  position: absolute;
+  right: 0.1rem;
+}
+
+.num5b{
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.1rem;
+}
+
+.num5c{
+  position: absolute;
+  bottom: 0.2rem;
+  left: 0.1rem;
+}
+
+.num5d{
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+}
+
+.theDice6 {
+  display: flex;
+  position: relative;
+  border: 1px solid whitesmoke;
+  width: 3rem;
+  height: 3rem;
+  background-color: whitesmoke;
+
+}
+.theDice6 span{
+  flex-direction: column;
+  margin: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: rgb(219, 26, 26);
+  border-radius: 40px; 
+}
+
+.num6a{
+  position: absolute;
+  right: 0.1rem;
+}
+
+.num6b{
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.1rem;
+}
+
+.num6c{
+  position: absolute;
+  bottom: 0.2rem;
+  left: 0.1rem;
+}
+
+.num6d{
+  position: absolute;
+  top: 0.9rem;
+  left: 0.1rem;
+}
+
+.num6e{
+  position: absolute;
+  top: 0.9rem;
+  right: 0.1rem;
+} */
+
+
+
+
+
+
+
+
